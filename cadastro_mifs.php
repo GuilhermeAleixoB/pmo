@@ -1,0 +1,31 @@
+<?php
+$projeto =$_POST['cmbprojeto'];
+//se o checkbox foi marcado retorna valor 1 se for falso retorna 0
+$MEMORIA_CALCULO =$_POST['MEMORIA_CALCULO'] ? 1 : 0;
+$CRONOGRAMA_PROJ =$_POST['CRONOGRAMA_PROJ'] ? 1 : 0;
+$EASY_PROJ =$_POST['EASY_PROJ'] ? 1 : 0;
+$MIF_ATA =$_POST['MIF_ATA'] ? 1 : 0;
+$MIF_TAREFA =$_POST['MIF_TAREFA'] ? 1 : 0;
+$MIF_STATUS =$_POST['MIF_STATUS'] ? 1 : 0;
+$MIF_ABERTURA_ASS =$_POST['MIF_ABERTURA_ASS'] ? 1 : 0;
+$MIF_ABERTURA =$_POST['MIF_ABERTURA'] ? 1 : 0;
+$MIF_ENCERRAMENTO_ASS =$_POST['MIF_ENCERRAMENTO_ASS'] ? 1 : 0;
+$MIF_ENCERRAMENTO =$_POST['MIF_ENCERRAMENTO'] ? 1 : 0;
+$MIF_ENGENHARIA_ASS =$_POST['MIF_ENGENHARIA_ASS'] ? 1 : 0;
+$MIF_ENGENHARIA =$_POST['MIF_ENGENHARIA'] ? 1 : 0;
+
+
+if ((!empty($projeto))){
+include("conexao.php");
+mysqli_query($conexao, "insert into MIF (PROJETO, MEMORIA_CALCULO, CRONOGRAMA_PROJ, EASY_PROJ, MIF_ATA, MIF_TAREFA, MIF_STATUS, MIF_ABERTURA_ASS, MIF_ABERTURA, 
+MIF_ENCERRAMENTO_ASS, MIF_ENCERRAMENTO, MIF_ENGENHARIA_ASS, MIF_ENGENHARIA) values ('$projeto','$MEMORIA_CALCULO','$CRONOGRAMA_PROJ','$EASY_PROJ','$MIF_ATA','$MIF_TAREFA',
+'$MIF_STATUS','$MIF_ABERTURA_ASS','$MIF_ABERTURA','$MIF_ENCERRAMENTO_ASS','$MIF_ENCERRAMENTO','$MIF_ENGENHARIA_ASS','$MIF_ENGENHARIA')");
+mysqli_close($conexao);
+header('Location: mifs.php?acao=sucesso');
+
+}else{
+header('Location: mifs.php?acao=erro');
+
+	}
+
+?>

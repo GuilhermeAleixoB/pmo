@@ -1,0 +1,49 @@
+/*
+ * style.css 
+ */
+.container, .container-fluid {
+ padding-right:0px;
+ padding-left: 0px;
+}
+.row {
+ margin-bottom: 0px;
+}
+
+[class*="col-"],footer, nav, aside, section, div[role="main"] {
+ padding-top: 10px;
+ padding-bottom: 20px;
+}
+ 
+
+#linha_menu {
+Background-color:#2F4F4F;
+	
+}
+
+
+#container2_index {
+	 padding-top: 40px;
+}
+
+#container2_apontamento {
+	 padding-top: 40px;
+	 margin:0;
+}
+
+footer{
+	margin-top:10px;
+	border:1px solid #000;
+	padding-bottom:200px;
+	background-color:#2F4F4F;
+	color:#ffffff;
+}
+
+#funcoesCargoLista button{
+	margin:10px;
+}
+
+
+.textob{
+padding:-100px;	
+	
+}
